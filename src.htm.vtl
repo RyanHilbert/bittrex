@@ -48,6 +48,7 @@
 	Array.prototype.sort = function(compareFunction){
 		let index = 0
 		for(const element of sort(compareFunction, this)) this[index++] = element
+		return this
 	}
 	for(const td of document.getElementsByTagName("td")) if(+td.textContent) td.textContent = (+td.textContent).toLocaleString("fullwide",{useGrouping:false,maximumFractionDigits:20})
 
