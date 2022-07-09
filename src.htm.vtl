@@ -9,38 +9,23 @@
 <table>
 	<thead>
 		<tr>
-			<th>Market Name
-			<th>Gain
+			<th>Symbol
 			<th>High
 			<th>Low
-			<th>Last
-			<th>Previous Day
 			<th>Volume
-			<th>Base Volume
-			<th>Bid
-			<th>Ask
-			<th>Buys
-			<th>Sells
-			<th>Time Stamp
-			<th>Created
+			<th>Quote Volume
+			<th>Percent Change
+			<th>Updated At
 	<tbody>
-#foreach($result in $input.path('$.result'))
-#set($gain = ($result.Last - $result.PrevDay) / $result.PrevDay)
+#foreach($result in $input.path('$'))
 		<tr>
-			<td>$result.MarketName
-			<td>$gain
-			<td>$result.High
-			<td>$result.Low
-			<td>$result.Last
-			<td>$result.PrevDay
-			<td>$result.Volume
-			<td>$result.BaseVolume
-			<td>$result.Bid
-			<td>$result.Ask
-			<td>$result.OpenBuyOrders
-			<td>$result.OpenSellOrders
-			<td>$result.TimeStamp
-			<td>$result.Created
+			<td>$result.symbol
+			<td>$result.high
+			<td>$result.low
+			<td>$result.volume
+			<td>$result.quoteVolume
+			<td>$result.percentChange
+			<td>$result.updatedAt
 #end
 </table>
 <script>
